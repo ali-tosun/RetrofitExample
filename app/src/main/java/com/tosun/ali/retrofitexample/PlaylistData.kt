@@ -15,6 +15,7 @@ class PlaylistData {
     @SerializedName("items")
     var items: List<Items>? = null
 
+
     class PageInfo {
         @SerializedName("totalResults")
         var totalResults: Int = 0
@@ -115,3 +116,10 @@ class PlaylistData {
         var snippet: Snippet? = null
     }
 }
+/*
+Örneğin JSON dosyasına Name şeklinde bir alan varken biz Java sınıfı içinde bunu String Name;
+şeklinde tanımlamamalıyız, yine String name şeklinde kullanmalıyız. Bu durumda da JSON’daki Name ile Java sınıfındaki
+name isim olarak eşleşmediği için GSON objeyi oluştururken değer yüklemesi yapamaıyor. İşte bu durumda imdadımıza
+@SerializedName notasyonu yetişiyor. Eğer JSON içindeki alanı
+Java sınıfı içinde başka bir isimle temsil etmek istersek bu notasyon vasıtası ile tanımlama yapabiliriz
+*/
